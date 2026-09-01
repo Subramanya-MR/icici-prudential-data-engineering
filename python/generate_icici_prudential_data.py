@@ -1087,6 +1087,8 @@ total_rows = (
     + NUM_INVESTMENTS
 )
 
+
+ 
 print("\n")
 print("=" * 70)
 print("ICICI PRUDENTIAL - SOURCE DATA CREATED")
