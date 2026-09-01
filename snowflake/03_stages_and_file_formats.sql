@@ -68,3 +68,26 @@ CREATE OR REPLACE FILE FORMAT PREMIUM_CSV_FORMAT
     SKIP_HEADER = 1
     FIELD_OPTIONALLY_ENCLOSED_BY = '"'
     TRIM_SPACE = TRUE;
+
+
+
+
+
+-- ---------------------------------------------------------
+-- CLAIMS S3 STAGE
+-- ---------------------------------------------------------
+
+CREATE OR REPLACE STAGE CLAIMS_S3_STAGE
+    URL = 's3://icici-prudential-data/claims/2026/08/26/'
+    STORAGE_INTEGRATION = ICICI_S3_INTEGRATION;
+
+
+-- ---------------------------------------------------------
+-- CLAIMS CSV FILE FORMAT
+-- ---------------------------------------------------------
+
+CREATE OR REPLACE FILE FORMAT CLAIMS_CSV_FORMAT
+    TYPE = CSV
+    SKIP_HEADER = 1
+    FIELD_OPTIONALLY_ENCLOSED_BY = '"'
+    TRIM_SPACE = TRUE;
