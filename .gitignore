@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Environment variables / secrets
+.env
+.env.*
+*.pem
+*.key
+
+# AWS
+.aws/
+
+# Snowflake credentials
+snowflake_credentials.json
+
+# Generated source data
+*.csv
+*.json
+
+# But keep our Python source code
+!python/*.py
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
