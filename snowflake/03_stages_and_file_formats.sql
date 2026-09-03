@@ -116,3 +116,22 @@ CREATE OR REPLACE STAGE AGENT_S3_STAGE
 CREATE OR REPLACE FILE FORMAT AGENT_JSON_FORMAT
     TYPE = JSON
     STRIP_OUTER_ARRAY = TRUE;
+
+
+
+
+
+
+
+
+-- =========================================================
+-- 6. INVESTMENT DATA
+-- =========================================================
+
+CREATE OR REPLACE STAGE INVESTMENT_S3_STAGE
+    URL = 's3://icici-prudential-data/investment/2026/08/26/'
+    STORAGE_INTEGRATION = ICICI_S3_INTEGRATION;
+
+CREATE OR REPLACE FILE FORMAT INVESTMENT_JSON_FORMAT
+    TYPE = JSON
+    STRIP_OUTER_ARRAY = TRUE;
