@@ -48,3 +48,21 @@ FILE_FORMAT = (FORMAT_NAME = 'CLAIMS_CSV_FORMAT')
 ON_ERROR = 'ABORT_STATEMENT';
 
 
+-- =========================================================
+-- 5. AGENT DATA LOAD
+-- =========================================================
+
+COPY INTO AGENT_RAW
+FROM @AGENT_S3_STAGE
+FILE_FORMAT = (FORMAT_NAME = 'AGENT_JSON_FORMAT')
+ON_ERROR = 'ABORT_STATEMENT';
+
+
+-- =========================================================
+-- 6. INVESTMENT DATA LOAD
+-- =========================================================
+
+COPY INTO INVESTMENT_RAW
+FROM @INVESTMENT_S3_STAGE
+FILE_FORMAT = (FORMAT_NAME = 'INVESTMENT_JSON_FORMAT')
+ON_ERROR = 'ABORT_STATEMENT';
