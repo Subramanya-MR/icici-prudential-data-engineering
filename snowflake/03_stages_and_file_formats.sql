@@ -91,3 +91,28 @@ CREATE OR REPLACE FILE FORMAT CLAIMS_CSV_FORMAT
     SKIP_HEADER = 1
     FIELD_OPTIONALLY_ENCLOSED_BY = '"'
     TRIM_SPACE = TRUE;
+
+
+
+
+
+
+
+-- ---------------------------------------------------------
+-- AGENT S3 STAGE
+-- Source: Agent / Branch System
+-- Format: JSON
+-- ---------------------------------------------------------
+
+CREATE OR REPLACE STAGE AGENT_S3_STAGE
+    URL = 's3://icici-prudential-data/agent/2026/08/26/'
+    STORAGE_INTEGRATION = ICICI_S3_INTEGRATION;
+
+
+-- ---------------------------------------------------------
+-- AGENT JSON FILE FORMAT
+-- ---------------------------------------------------------
+
+CREATE OR REPLACE FILE FORMAT AGENT_JSON_FORMAT
+    TYPE = JSON
+    STRIP_OUTER_ARRAY = TRUE;
